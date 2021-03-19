@@ -5,8 +5,8 @@ import NasaPhoto from './nasaPhoto'
     const {title} = props;
     if (!title.title) return <h3>Loading...</h3>;
     return (
-      <div className="title">
-        <p>{title.title}</p>
+      <div>
+        <h3>{title.title}</h3>
         <NasaPhoto nasaphoto={title}/>
       </div>
     );

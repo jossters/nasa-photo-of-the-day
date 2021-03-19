@@ -5,8 +5,8 @@ const Copyright = props => {
   const {copyright} = props;
   if (!copyright.copyright) return <h3>Loading...</h3>;
     return (
-      <div className="copyright">
-        <p>{copyright.copyright}</p>
+      <div>
+        <h4>{copyright.copyright}</h4>
         <Explanation explanation={copyright}/>
       </div>
     );

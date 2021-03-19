@@ -5,8 +5,8 @@ const Date = props => {
   const {date} = props;
   if (!date.date) return <h3>Loading...</h3>;
     return (
-      <div className="date">
-        <p>{date.date}</p>
+      <div>
+        <h2>{date.date}</h2>
         <Title title={date}/>
       </div>
     );

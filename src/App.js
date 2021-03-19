@@ -2,30 +2,33 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from 'axios'
 import Date from './components/date'
+import {NASA_API} from './constant'
+import StyledApp from './constant/styles'
 // Renders to dom 
 const App = () => {
+  //I set state so that i can use it to store data
+  
   const [nasa, setNasa] = useState("")
   
-  // I just stored the url in api
-  const api = `https://api.nasa.gov/planetary/apod?api_key=R3RMfqITi5NzBuBcSLzv6of5lHPClfGoR0WdnOY4`
   // Im grabbing the api data
   useEffect(() => {
     axios
-    .get(api)
+    .get(NASA_API)
     .then((res) => {
   //setting nasa to hold data
       setNasa(res.data)
     })
+  //catching any errors if any
     .catch( error => {
       console.log(error);
     })
   },[])
-  console.log(nasa)
+  
   return (
-    <div className="App">
-      <p>Nasa</p>
+    <StyledApp>
+      <h1>Nasa Photo Of The Day</h1>
       <Date date={nasa}/>
-    </div>
+    </StyledApp>
   );
 }
 

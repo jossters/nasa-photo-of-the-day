@@ -4,7 +4,7 @@ const Explanation = props => {
     const {explanation} = props;
     if (!explanation.explanation) return <h3>Loading...</h3>;
     return (
-      <div className="explination">
+      <div>
         <p>{explanation.explanation}</p>
       </div>
     );
